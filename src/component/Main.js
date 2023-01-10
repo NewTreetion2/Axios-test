@@ -1,30 +1,14 @@
 // 서버로부터 가져온 json데이터를 GET해 뿌려주는 부분
-import axios from "axios";
-import { useEffect, useState } from "react";
+import { GetData } from "Lib/Apis/GetData";
+import { useEffect } from "react";
+import { useRecoilValue } from "recoil";
+import { userData } from "store";
 
 function Main() {
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    axios.get("https://jsonplaceholder.typicode.com/posts").then((res) => {
-      setData(res.data);
-    });
-  }, []);
+  const data = useRecoilValue(userData);
 
-  return (
-    <div>
-      {data.map((data) => {
-        return (
-          <div key={data.id}>
-            userId: {data.userId}
-            <tr />
-            title: {data.title}
-            <tr />
-            body: {data.body}
-          </div>
-        );
-      })}
-    </div>
-  );
+  console.log(data);
+  return <div>{data.title}</div>;
 }
 
 export default Main;
