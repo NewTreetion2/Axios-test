@@ -1,0 +1,27 @@
+.modal {
+  width: 50vw;
+  height: 50vh;
+  position: fixed;
+  left: 25vw;
+  top: 25vh;
+  background-color: white;
+  z-index: 30;
+}
+
+.modalBackground {
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  position: fixed;
+}
+
+.closeButton > button {
+  position: absolute;
+  right: 20px;
+  bottom: 20px;
+  width: 30px;
+  height: 20px;
+  background-color: gray;
+  border-radius: 5px;
+}
